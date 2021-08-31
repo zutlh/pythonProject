@@ -20,3 +20,35 @@ print(len("abc"))
 print(len('中文'.encode("utf-8")))
 print('hello %s' % 'world')
 print('Hi, %s, you have $%d' % ('Micheal', 10000))
+# list,可以存在不同的数据类型，其他和Java中差不多
+classmates = ['micheal', 'tom']
+print(classmates)
+# tuple,另一种有序列表叫元组：tuple。tuple和list非常类似，但是tuple一旦初始化就不能修改
+classmates1 = ('micheal', 'tom')
+print(classmates1)
+age = 20
+if age >= 18:
+    print("your age is ", age)
+    print("adult")
+age1 = 3
+if age1 >= 18:
+    print('adult')
+elif age1 >= 6:
+    print('teenager')
+else:
+    print("kid")
+    height = 1.75
+    weight = 80.5
+bmi = weight / (height * height)
+print(bmi)
+if bmi > 32:
+    print('严重肥胖')
+if 32 >= bmi >= 28:
+    print('肥胖')
+if 28 > bmi >= 25:
+    print('过重')
+if 25 > bmi >= 18.5:
+    print('正常')
+if bmi < 18.5:
+    print('过轻')
+
