@@ -51,4 +51,61 @@ if 25 > bmi >= 18.5:
     print('正常')
 if bmi < 18.5:
     print('过轻')
+names = ['tom', 'micheal']
+for name in names:
+    print(name)
+sum = 0
+for x in [1, 2, 3, 4, 5]:
+    sum += x
+print(sum)
+sum1 = 0
+for x in list(range(100)):
+    sum1 = sum1 + x
+print(sum1)
+sum = 0
+n = 99
+while n > 0:
+    sum = sum + n
+    n = n - 2
+print(sum)
+# dict 相当于Java中的map
+d = {'micheal': 99, 'tom': 29, 'jack': 89}
+print(d)
+print(d['micheal'])
+print('tomas' in d)
+# 要删除一个key，用pop(key)方法，对应的value也会从dict中删除：
+d.pop('micheal')
+print(d)
+# 和list比较，dict有以下几个特点：
+#
+# 1、查找和插入的速度极快，不会随着key的增加而变慢；
+# 2、需要占用大量的内存，内存浪费多。
+# 而list相反：
+#
+# 1、查找和插入的时间随着元素的增加而增加；
+# 2、占用空间小，浪费内存很少。
 
+# set和dict类似，也是一组key的集合，但不存储value。由于key不能重复，所以，在set中，没有重复的key。
+s = set([1, 2, 3])
+s1 = set([2, 3, 4])
+print(s)
+s.add(4)
+print(s)
+s.remove(4)
+print(s)
+print(s & s1)
+a = ['c', 'b', 'a']
+a.sort()
+print(a)
+a = 'ABC'
+print(a.replace('A', 'a'))
+print(a)
+# 虽然字符串有个replace()方法，也确实变出了'Abc'，但变量a最后仍是'abc'，应该怎么理解呢？
+# 我们先把代码改成下面这样：
+a = 'abc'
+b = a.replace('a', 'A')
+print(b)
+print(a)
+# 上面我们讲了，str是不变对象，而list是可变对象。
+# 要始终牢记的是，a是变量，而'abc'才是字符串对象！有些时候，我们经常说，对象a的内容是'abc'，但其实是指，a本身是一个变量，它指向的对象的内容才是'abc'：
+# 所以，对于不变对象来说，调用对象自身的任意方法，也不会改变该对象自身的内容。相反，这些方法会创建新的对象并返回，这样，就保证了不可变对象本身永远是不可变的。
