@@ -109,3 +109,28 @@ print(a)
 # 上面我们讲了，str是不变对象，而list是可变对象。
 # 要始终牢记的是，a是变量，而'abc'才是字符串对象！有些时候，我们经常说，对象a的内容是'abc'，但其实是指，a本身是一个变量，它指向的对象的内容才是'abc'：
 # 所以，对于不变对象来说，调用对象自身的任意方法，也不会改变该对象自身的内容。相反，这些方法会创建新的对象并返回，这样，就保证了不可变对象本身永远是不可变的。
+print(abs(100))
+print(abs(-20))
+print(max(1, 2, 3, 4))
+a = abs
+print(a(-1))
+import math
+
+
+def move(x, y, step, angle=0):
+    nx = x + step * math.cos(angle)
+    ny = y - step * math.sin(angle)
+    return nx, ny
+
+
+print(move(100, 100, 60, math.pi / 6))
+# 要注意定义可变参数和关键字参数的语法：
+#
+# *args是可变参数，args接收的是一个tuple；
+#
+# ** kw是关键字参数，kw接收的是一个dict
+L = ['Michael', 'Sarah', 'Tracy', 'Bob', 'Jack']
+print(L[0:3])  # 切片 从0 到 3
+print(L[-1])
+# 字符串'xxx'也可以看成是一种list，每个元素就是一个字符。因此，字符串也可以用切片操作，只是操作结果仍是字符串：
+print('ABCDEFG'[:3])
