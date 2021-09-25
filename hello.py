@@ -5,6 +5,10 @@
 # print(name)
 # print("hello", name)
 # print(1024 * 768)
+
+import collections
+from collections.abc import Iterable
+
 print('I\'m\"OK\"!')
 print('I\'m learning python')
 print(r'\\\d\a')
@@ -134,3 +138,17 @@ print(L[0:3])  # 切片 从0 到 3
 print(L[-1])
 # 字符串'xxx'也可以看成是一种list，每个元素就是一个字符。因此，字符串也可以用切片操作，只是操作结果仍是字符串：
 print('ABCDEFG'[:3])
+# 只要是可迭代对象，无论有无下标，都可以迭代，比如dict就可以迭代：
+# 如何判断一个对象是可迭代对象呢？方法是通过collections.abc模块的Iterable类型判断：
+print(isinstance('abc', Iterable))
+# 如果要对list实现类似Java那样的下标循环怎么办？Python内置的enumerate函数可以把一个list变成索引-元素对，这样就可以在for循环中同时迭代索引和元素本身：
+for i, value in enumerate(['A', 'B', 'C']):
+    print(i, value)
+print([x * x for x in range(1, 11)])
+print([x * x for x in range(1, 11) if x % 2 == 0])
+print([m + n for m in 'ABC' for n in 'XYZ'])
+import os
+
+print([d for d in os.listdir('.')])
+d = {'x': 'A', 'y': 'B', 'z': 'C'}
+print([k + '=' + v for k, v in d.items()])
